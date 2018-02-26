@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "securityHeadersExtension",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Plug-in that have as goal to add HTTP security headers to HTTP/S responses",
+    "description": "The description of the application"
+  }
+}

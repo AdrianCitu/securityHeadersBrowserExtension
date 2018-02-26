@@ -1,0 +1,388 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- build:css styles/popup-vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css styles/main.css -->
+  <link href="styles/main.css" rel="stylesheet">
+  <!-- endbuild -->
+</head>
+<body>
+<!-- build:js scripts/popup-vendor.js -->
+<!-- bower:js -->
+<!-- endbower -->
+<!-- endbuild -->
+
+<!--p><input type="text" name="search" placeholder="Search.."></p-->
+
+<!--button type="submit">Save</button>
+<button type="reset">Clear</button>
+<br-->
+<form id="mainForm">
+  <button type="submit">Save(on localstorage)</button>
+  <button type="reset">Clear(form)</button>
+  <button type= "button" id="clearLocalstorage">Clear(localstorage)</button>
+  <br>
+  <button type="button" class="accordion">Activate HTTP Response Headers</button>
+  <div class="panel" id="activatePanel">
+
+    <!-- Strict-Transport-Security header -->
+    <label id="Strict-Transport-Security">
+      <input type="checkbox" id="add-Strict-Transport-Security">
+      Strict-Transport-Security
+      <input type="hidden" value="Strict-Transport-Security" id="add-Strict-Transport-Security-name">
+      <div class="relative panel" id="add-Strict-Transport-Security-tablePanelDiv">
+        <table width="0">
+          <tr>
+            <td align="left">
+              max-age (mandatory)
+            </td>
+            <td align="left">
+              <input type="text" id="add-Strict-Transport-Security-max-age" value="31536000" size="10" name="max-age">
+            </td>
+          </tr>
+          <tr>
+            <td align="left">
+              includeSubDomains (mandatory)
+            </td>
+            <td align="left ">
+              <select id="add-Strict-Transport-Security-includeSubDomains" name="includeSubDomains">
+                <option value="Yes">Yes</option>
+                <option value="No" selected>No</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td align="left">
+              preload (mandatory)
+            </td>
+            <td align="left">
+              <select id="add-Strict-Transport-Security-preload" name="preload">
+                <option value="Yes">Yes</option>
+                <option value="No" selected>No</option>
+              </select>
+            </td>
+          </tr>
+
+        </table>
+      </div>
+    </label>
+
+    <!-- Public-Key-Pins header-->
+    <label id="Public-Key-Pins">
+      <input type="checkbox" id="add-Public-Key-Pins">
+      Public-Key-Pins
+      <input type="hidden" value="Public-Key-Pins" id="add-Public-Key-Pins-name">
+      <div class="relative panel" id="add-Public-Key-Pins-tablePanelDiv">
+        <table width="0">
+          <tr>
+            <td align="left">
+              max-age (mandatory)
+            </td>
+            <td align="left">
+              <input type="text" size="10"
+                     id="add-Public-Key-Pins-max-age" name="max-age">
+            </td>
+          </tr>
+          <tr>
+            <td align="left">
+              pin-sha256 (mandatory)
+            </td>
+            <td align="left">
+              <input type="text" size="10"
+                     id="add-Public-Key-Pins-pin-sha256" name="pin-sha256">
+            </td>
+          </tr>
+          <tr>
+            <td align="left">
+              includeSubDomains (optional)
+            </td>
+            <td align="left">
+              <select id="add-Public-Key-Pins-includeSubDomains" name="includeSubDomains">
+                <option value="Yes">Yes</option>
+                <option value="No" selected>No</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td align="left">
+              report-uri (optional)
+            </td>
+            <td align="left">
+              <input type="text" size="10"
+                     id="add-Public-Key-Pins-report-uri" name="report-uri">
+            </td>
+          </tr>
+        </table>
+      </div>
+    </label>
+
+    <!-- X-Frame-Options header-->
+    <label id="X-Frame-Options">
+      <input type="checkbox" id="add-X-Frame-Options">
+      X-Frame-Options
+      <input type="hidden" id="add-X-Frame-Options-name" value="X-Frame-Options">
+      <div class="relative panel" id="add-X-Frame-Options-tablePanelDiv">
+        <table width="0">
+          <tr>
+            <td align="left">
+              <input type="radio" name="add-X-Frame-Options-radio"
+                     value="DENY" id="add-X-Frame-Options-name-radio1">DENY
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td align="left">
+              <input type="radio" name="add-X-Frame-Options-radio"
+                     value="SAMEORIGIN" id="add-X-Frame-Options-name-radio2">SAMEORIGIN
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td align="left">
+              <input type="radio" name="add-X-Frame-Options-radio"
+                     value="ALLOW-FROM" id="add-X-Frame-Options-name-radio3">ALLOW-FROM
+            </td>
+            <td align="left">
+              <!-- this input is linked to the ALLOW-FROM radio-->
+              <input type="text" size="10" id="add-X-Frame-Options-ALLOW-FROM-linkedToRadio" name="linkedToRadio">
+            </td>
+          </tr>
+        </table>
+      </div>
+    </label>
+
+    <!-- X-XSS-Protection header-->
+    <label id="X-XSS-Protection">
+      <input type="checkbox" id="add-X-XSS-Protection">
+      X-XSS-Protection
+      <input type="hidden" id="add-X-XSS-Protection-name" value="X-XSS-Protection">
+      <div class="relative panel" id="add-X-XSS-Protection-tablePanelDiv">
+        <table width="0">
+          <tr>
+            <td align="left">
+              <input type="radio" name="add-X-XSS-Protection-radio" value="0" id="add-XXSSProtection-radio1">0
+            </td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td align="left">
+              <input type="radio" name="add-X-XSS-Protection-radio" value="1" id="add-XXSSProtection-radio2">1
+            </td>
+            <td align="left">
+              ; mode (optional)
+            </td>
+            <td align="left">
+              <input type="text" id="add-X-XSS-Protection-mode" value="block" size="10" name="mode">
+            </td>
+
+          </tr>
+        </table>
+      </div>
+    </label>
+
+    <!-- X-Content-Type-Options header-->
+    <label id="X-Content-Type-Options">
+      <input type="checkbox" id="add-X-Content-Type-Options">
+      X-Content-Type-Options
+      <input type="hidden" id="add-X-Content-Type-Options-name" value="X-Content-Type-Options">
+      <div class="relative panel" id="add-X-Content-Type-Options-tablePanelDiv">
+        <table width="0">
+          <tr>
+            <td align="left">
+              nosniff (mandatory)
+            </td>
+            <td align="left">
+              <select id="add-X-Content-Type-Options-nosniff" name="nosniff">
+                <option value="Yes">Yes</option>
+                <option value="No" selected>No</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </label>
+
+    <!-- Content-Security-Policy header-->
+    <label id="Content-Security-Policy">
+      <input type="checkbox" id="add-Content-Security-Policy">
+      Content-Security-Policy
+      <input type="hidden" value="Content-Security-Policy" id="add-Content-Security-Policy-name">
+      <div class="relative panel" id="add-Content-Security-Policy-tablePanelDiv">
+        <table width="0">
+          <tr>
+            <td align="left">
+              policy-directives separated by ";"
+            </td>
+            <td align="left">
+              <!--this input have an empty name because Content-Security-Policy header
+               is the header name + some text representing the policy directives
+               -->
+              <input type="text" size="10" id="add-Content-Security-Policy-policy-directives" name="">
+            </td>
+          </tr>
+        </table>
+      </div>
+    </label>
+
+    <!-- Referrer-Policy header-->
+    <label id="Referrer-Policy">
+      <input type="checkbox" id="add-Referrer-Policy">
+      Referrer-Policy
+      <input type="hidden" value="Referrer-Policy" id="add-Referrer-Policy-name">
+      <div class="relative panel" id="add-Referrer-Policy-tablePanelDiv">
+        <table width="0">
+          <tr>
+            <td align="left">
+              <input type="radio" name="add-Referrer-Policy-radio"
+                     id="add-Referrer-Policy-radio1" value="no-referrer">no-referrer
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="radio" name="add-Referrer-Policy-radio"
+                     id="add-ReferrerPolicy-radio2"
+                     value="no-referrer-when-downgrade">no-referrer-when-downgrade
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="radio" name="add-Referrer-Policy-radio"
+                     id="add-ReferrerPolicy-radio3" value="origin">origin
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="radio" name="add-Referrer-Policy-radio"
+                     id="add-ReferrerPolicy-radio4"
+                     value="origin-when-cross-origin">origin-when-cross-origin
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="radio" name="add-Referrer-Policy-radio"
+                     id="add-ReferrerPolicy-radio5"
+                     value="same-origin">same-origin
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="radio" name="add-Referrer-Policy-radio"
+                     id="add-ReferrerPolicy-radio6"
+                     value="strict-origin">strict-origin
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="radio" name="add-Referrer-Policy-radio"
+                     id="add-ReferrerPolicy-radio7"
+                     value="strict-origin-when-cross-origin">strict-origin-when-cross-origin
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="radio" name="add-Referrer-Policy-radio"
+                     id="add-ReferrerPolicy-radio8"
+                     value="unsafe-url">unsafe-url
+            </td>
+          </tr>
+        </table>
+      </div>
+    </label>
+
+    <!-- Expect-CT header -->
+    <label id="Expect-CT">
+      <input type="checkbox" id="add-Expect-CT">
+      Expect-CT
+      <input type="hidden" value="Expect-CT" id="add-Expect-CT-name">
+      <div class="relative panel" id="add-Expect-CT-tablePanelDiv">
+        <table width="0">
+          <tr>
+            <td align="left">
+              max-age (mandatory)
+            </td>
+            <td align="left">
+              <input type="text" size="10" id="add-Expect-CT-max-age" name="max-age">
+            </td>
+          </tr>
+          <tr align="left">
+            <td align="left">
+              enforce (optional)
+            </td>
+            <td align="left">
+              <select id="add-Expect-CT-enforce" name="enforce">
+                <option value="Yes" selected>Yes</option>
+                <option value="No">No</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td align="left">
+              report-uri (optional)
+            </td>
+            <td align="left">
+              <input type="text" size="10" id="add-Expect-CT-report-uri" name="report-uri">
+            </td>
+          </tr>
+        </table>
+      </div>
+    </label>
+  </div>
+
+  <button type="button" class="accordion">Deactivate HTTP Response Headers</button>
+  <div class="panel" id="deactivatePanel">
+    <label id="Strict-Transport-Security">
+      <input type="checkbox" id="delete-Strict-Transport-Security">
+      Strict-Transport-Security<br>
+      <input type="hidden" value="Strict-Transport-Security" id="delete-Strict-Transport-Security-name">
+    </label>
+    <label id="Public-Key-Pins">
+      <input type="checkbox" id="delete-Public-Key-Pins">
+      Public-Key-Pins<br>
+      <input type="hidden" value="Public-Key-Pins" id="delete-Public-Key-Pins-name">
+    </label>
+    <label id="X-Frame-Options">
+      <input type="checkbox" id="delete-X-Frame-Options">
+      X-Frame-Options<br>
+      <input type="hidden" id="delete-X-Frame-Options-name" value="X-Frame-Options">
+    </label>
+    <label id="X-XSS-Protection">
+      <input type="checkbox" id="delete-X-XSS-Protection">
+      X-XSS-Protection<br>
+      <input type="hidden" id="delete-X-XSS-Protection-name" value="X-XSS-Protection">
+    </label>
+    <label id="X-Content-Type-Options">
+      <input type="checkbox" id="delete-X-Content-Type-Options">
+      X-Content-Type-Options<br>
+      <input type="hidden" id="delete-X-Content-Type-Options-name" value="X-Content-Type-Options">
+    </label>
+    <label id="Content-Security-Policy">
+      <input type="checkbox" id="delete-Content-Security-Policy">
+      Content-Security-Policy<br>
+      <input type="hidden" value="Content-Security-Policy" id="delete-Content-Security-Policy-name">
+    </label>
+    <label id="Referrer-Policy">
+      <input type="checkbox" id="delete-Referrer-Policy">
+      Referrer-Policy<br>
+      <input type="hidden" value="Referrer-Policy" id="delete-Referrer-Policy-name">
+    </label>
+    <label id="Expect-CT">
+      <input type="checkbox" id="delete-Expect-CT">
+      Expect-CT<br>
+      <input type="hidden" value="Expect-CT" id="delete-Expect-CT-name">
+    </label>
+  </div>
+  </div>
+</form>
+
+<!--button class="accordion">Customize HTTP Headers</button>
+<div class="panel" id="customPanel">
+    <p>Lorem ipsum dolor sit ametut aliquip ex ea commodo consequat.</p>
+</div-->
+<script src="scripts/popup.js"></script>
+</body>
+</html>
