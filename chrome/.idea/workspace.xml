@@ -12,7 +12,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="background.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="background.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts.babel/background.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="280">
@@ -48,7 +48,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/spec/test.js">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -190,6 +190,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -200,25 +202,12 @@
             <path>
               <item name="chrome" type="b2602c69:ProjectViewProjectNode" />
               <item name="chrome" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chrome" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chrome" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chrome" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chrome" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="spec" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -342,7 +331,8 @@
       <workItem from="1518036656157" duration="21284000" />
       <workItem from="1518632036037" duration="2327000" />
       <workItem from="1518815523572" duration="11843000" />
-      <workItem from="1519648425856" duration="575000" />
+      <workItem from="1519648425856" duration="1173000" />
+      <workItem from="1519672258386" duration="33000" />
     </task>
     <servers />
   </component>
@@ -361,11 +351,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188352000" />
+    <option name="totallyTimeSpent" value="188983000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
-    <editor active="true" />
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <layout>
       <window_info anchor="right" id="PlantUML" order="7" />
       <window_info anchor="right" id="Palette" order="0" />
@@ -381,7 +370,7 @@
       <window_info id="Capture Tool" order="7" />
       <window_info id="Gulp" order="4" side_tool="true" weight="0.32962757" />
       <window_info id="Designer" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.22568093" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.22901613" />
       <window_info anchor="bottom" id="Docker" order="1" weight="0.32939914" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="6" />
@@ -412,12 +401,10 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/spec/test.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#6721#7125#0" />
-          </folding>
+        <state relative-caret-position="84">
+          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
         </state>
       </provider>
     </entry>
